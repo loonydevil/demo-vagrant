@@ -1,0 +1,12 @@
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "oliechti/labbox2016b"
+
+  config.vm.network "forwarded_port", guest: 9111, host: 9115
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+
+# change the first argument to the folder where you cloned the project
+  config.vm.synced_folder "/Users/zealot/projects/demo", "/java-projects"
+
+end
